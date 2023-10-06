@@ -56,6 +56,11 @@
           - tomcat9
         state: present
 
+    - name: Ensure tomcat is started
+      service:
+        name: tomcat
+        state: started
+
     - name: Copy war into tomcat directory
       copy:
         src: webapp.war
